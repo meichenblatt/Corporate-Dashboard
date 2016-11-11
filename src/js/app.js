@@ -1,4 +1,4 @@
-var DashboardApp = angular.module('DashboardApp', ['ngRoute', 'ngResource']);
+var DashboardApp = angular.module('DashboardApp', ['ngRoute', 'ngResource', 'uiGmapgoogle-maps']);
 
 DashboardApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -19,6 +19,8 @@ DashboardApp.config(function ($routeProvider, $locationProvider) {
     });
     $locationProvider.html5Mode(true);
 });
+
+
 
 // DashboardApp.factory('', function($resource){
 //     return $resource('');

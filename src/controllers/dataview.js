@@ -1,4 +1,4 @@
-RestaurantApp.controller('dataviewController', function($scope) {
+DashboardApp.controller('dataviewController', function($scope) {
 
 
 	

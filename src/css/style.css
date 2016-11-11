@@ -1,0 +1,8 @@
+.angular-google-map-container { height: 500px; }
+
+.labelClass {
+    font-size:16px;
+    padding:5px;
+    background:white;
+    box-shadow: 4px 4px 2px #888888;
+} 
