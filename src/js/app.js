@@ -1,4 +1,4 @@
-var DashboardApp = angular.module('DashboardApp', ['ngRoute', 'ngResource', 'uiGmapgoogle-maps']);
+var DashboardApp = angular.module('DashboardApp', ['ngRoute', 'ngResource', 'uiGmapgoogle-maps', 'chart.js']);
 
 DashboardApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -22,7 +22,15 @@ DashboardApp.config(function ($routeProvider, $locationProvider) {
 
 
 
-// DashboardApp.factory('', function($resource){
-//     return $resource('');
-// });
+DashboardApp.factory('Locations', function($resource){
+    return $resource('https://udacity-5c1b2.firebaseio.com/Locations.json');
+});
+
+DashboardApp.factory('ReportedIssues', function($resource){
+    return $resource('https://udacity-5c1b2.firebaseio.com/KeyMetrics/Reported%20Issues.json');
+});
+
+DashboardApp.factory('Customers', function($resource){
+    return $resource('https://udacity-5c1b2.firebaseio.com/KeyMetrics/Customers.json');
+});
 
