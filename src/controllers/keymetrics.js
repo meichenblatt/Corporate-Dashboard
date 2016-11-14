@@ -48,7 +48,7 @@ DashboardApp.controller('keymetricsController', function($scope, ReportedIssues,
   };
 
 
-  $scope.updates = $interval(getMetrics, 15000);
+  $scope.updates = $interval(getMetrics, 5000);
 
   $scope.$on("$destroy",function(){
     if (angular.isDefined($scope.updates)) {

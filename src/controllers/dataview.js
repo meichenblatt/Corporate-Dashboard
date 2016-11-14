@@ -6,8 +6,9 @@ DashboardApp.controller('dataviewController', function($scope, $http, $interval,
     getIssues();
     
     function getIssues(){
-    	Issues.success(function(issues) {
-			var lines = issues.split("\n");
+    	Issues.async().then(function(issues) {
+    		console.log(issues.data)
+			var lines = issues.data.split("\n");
 			$scope.Issues = [];
 			lines.forEach(function(line, indx){
 				if (indx === 0){} else{
@@ -25,10 +26,11 @@ DashboardApp.controller('dataviewController', function($scope, $http, $interval,
 					$scope.Issues.push(obj);
 				}
 			});
+			console.log("interval complete")
 		});
     }
 	
-	$scope.dataupdates = $interval(getIssues, 15000);
+	$scope.dataupdates = $interval(getIssues, 5000);
 
     $scope.$on("$destroy",function(){
    	 	if (angular.isDefined($scope.dataupdates)) {

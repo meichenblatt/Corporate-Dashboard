@@ -15,7 +15,7 @@ DashboardApp.controller('geospatialController', function($scope, Locations,$inte
 	    });
 	}
     
-	$scope.geoupdates = $interval(getLocations, 15000);
+	$scope.geoupdates = $interval(getLocations, 5000);
 
     $scope.$on("$destroy",function(){
       if (angular.isDefined($scope.geoupdates)) {

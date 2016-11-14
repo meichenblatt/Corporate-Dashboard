@@ -27,7 +27,7 @@ DashboardApp.factory('Locations', function($resource){
 });
 
 DashboardApp.factory('ReportedIssues', function($resource){
-    return $resource('https://udacity-5c1b2.firebaseio.com/KeyMetrics/Reported%20Issues.json');
+    return $resource('/data/ReportedIssues.json');
 });
 
 DashboardApp.factory('Customers', function($resource){
@@ -39,5 +39,9 @@ DashboardApp.factory('OpenIssues', function($resource){
 });
 
 DashboardApp.factory('Issues', function($http){
-    return $http.get('/data/issues.csv');
+    return {
+        async: function() {
+            return $http.get('/data/issues.csv');
+        }
+    }
 });
