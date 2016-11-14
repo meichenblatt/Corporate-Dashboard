@@ -1,0 +1,1 @@
+DashboardApp.controller("geospatialController",function($scope,Locations,$timeout){function getLocations(){Locations.get({},function(locations){$scope.markers=[];for(var key in locations)"object"==typeof locations[key]&&"$promise"!=key&&$scope.markers.push(locations[key])})}$scope.map={center:{latitude:40,longitude:-97.380979},zoom:4},getLocations(),$timeout(getLocations,3e4)});

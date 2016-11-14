@@ -2,7 +2,7 @@
 
 This corporate dashboard application uses AngularJS. There are three views; a geospatial view, a key metrics view and a dataview. 
 
-This is my submission for project #3 in the Senior Web Development Nanodegree by Udacity. 
+This is my submission for project #4 in the Senior Web Development Nanodegree by Udacity. 
 
 I used Gulp as the build process.
 

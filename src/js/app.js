@@ -34,3 +34,6 @@ DashboardApp.factory('Customers', function($resource){
     return $resource('https://udacity-5c1b2.firebaseio.com/KeyMetrics/Customers.json');
 });
 
+DashboardApp.factory('OpenIssues', function($resource){
+    return $resource('https://udacity-5c1b2.firebaseio.com/KeyMetrics/OpenIssues.json');
+});
