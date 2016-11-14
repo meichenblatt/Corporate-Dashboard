@@ -1,4 +1,4 @@
-DashboardApp.controller('keymetricsController', function($scope, ReportedIssues, Customers, OpenIssues, $timeout) {
+DashboardApp.controller('keymetricsController', function($scope, ReportedIssues, Customers, OpenIssues, $interval) {
 	
   $scope.series1 = ['Open Issues'];
   $scope.series2 = ['Paying Customers'];
@@ -33,8 +33,6 @@ DashboardApp.controller('keymetricsController', function($scope, ReportedIssues,
     });
   }
 
-  $timeout(getMetrics, 30000); 
-
 
   $scope.options = {
     scales: {
@@ -48,5 +46,14 @@ DashboardApp.controller('keymetricsController', function($scope, ReportedIssues,
       ]
     }
   };
+
+
+  $scope.updates = $interval(getMetrics, 15000);
+
+  $scope.$on("$destroy",function(){
+    if (angular.isDefined($scope.updates)) {
+      $interval.cancel($scope.updates);
+    }
+  });
 
 });

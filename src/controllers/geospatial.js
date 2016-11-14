@@ -1,4 +1,4 @@
-DashboardApp.controller('geospatialController', function($scope, Locations, $timeout) {
+DashboardApp.controller('geospatialController', function($scope, Locations,$interval) {
 	
 	$scope.map = { center: { latitude: 40, longitude: -97.380979 }, zoom: 4 };
 	getLocations();
@@ -15,6 +15,12 @@ DashboardApp.controller('geospatialController', function($scope, Locations, $tim
 	    });
 	}
     
-	$timeout(getLocations, 30000);
+	$scope.geoupdates = $interval(getLocations, 15000);
+
+    $scope.$on("$destroy",function(){
+      if (angular.isDefined($scope.geoupdates)) {
+          $interval.cancel($scope.geoupdates);
+      }
+  });
 });
 

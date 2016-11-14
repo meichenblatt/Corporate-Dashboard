@@ -59,7 +59,7 @@ gulp.task('concatcss', ['minify-css'], function() {
 gulp.task('compress', ['concatcss'], function (cb) {
   
   pump([
-        gulp.src(['src/js/*.js', 'src/controllers/*.js']),
+        gulp.src(['src/js/*.js', 'src/controllers/*.js', 'src/app.js']),
         uglify({mangle:false}),
         gulp.dest('src/compressed')
     ],
@@ -78,6 +78,8 @@ gulp.task('concatjs', ['compress'], function() {
     './src/compressed/angular-google-maps.js',
     './src/compressed/chart.min.js',
     './src/compressed/angular-chart.min.js',
+    './src/compressed/jquery-3.1.1.min.js',
+    './src/compressed/bootstrap.min.js',
     './src/compressed/app.js',
     './src/compressed/geospatial.js',
     './src/compressed/keymetrics.js',

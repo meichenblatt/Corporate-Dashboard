@@ -37,3 +37,7 @@ DashboardApp.factory('Customers', function($resource){
 DashboardApp.factory('OpenIssues', function($resource){
     return $resource('https://udacity-5c1b2.firebaseio.com/KeyMetrics/OpenIssues.json');
 });
+
+DashboardApp.factory('Issues', function($http){
+    return $http.get('/data/issues.csv');
+});
