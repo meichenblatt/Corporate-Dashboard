@@ -2,6 +2,8 @@
 
 This corporate dashboard application uses AngularJS. There are three views; a geospatial view, a key metrics view and a dataview. 
 
+To see a demo version go to [mendeleic.com/dashboard](http://mendeleic.com/dashboard/).
+
 This is my submission for project #4 in the Senior Web Development Nanodegree by Udacity. 
 
 I used Gulp as the build process.
